@@ -67,7 +67,8 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter{
                 .authorities(ApplicationUserRole.ADMIN.getGrantedAuthoritys())
                 .build();
        
-       UserDetails TomUser = User.builder()
+       UserDetails TomUser;
+        TomUser = User.builder()
                 .username("Tom")
                 .password(passowordEncoder.encode("password123"))
 //                .roles(ApplicationUserRole.ADMINTRAINEE.name())
