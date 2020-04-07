@@ -1,0 +1,35 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.example.demo.security;
+
+import com.google.common.collect.Sets;
+import java.util.Set;
+
+/**
+ *
+ * @author Alvaro
+ */
+public enum ApplicationUserRole {
+    STUDENT(Sets.newHashSet(
+//            ApplicationUserPermission.COURSE_READ,
+//            ApplicationUserPermission.STUDENT_READ,
+//            ApplicationUserPermission.STUDENT_WRITE
+    )),
+    ADMIN(Sets.newHashSet(
+            ApplicationUserPermission.COURSE_READ,
+            ApplicationUserPermission.COURSE_WRITE,
+            ApplicationUserPermission.STUDENT_READ,
+            ApplicationUserPermission.STUDENT_WRITE));
+    
+    private final Set<ApplicationUserPermission> permissons;
+
+    private ApplicationUserRole(Set<ApplicationUserPermission> permissons) {
+        this.permissons = permissons;
+    }
+    
+    
+    
+}
